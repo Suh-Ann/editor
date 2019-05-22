@@ -23,5 +23,12 @@ void MainWindow::on_Text_triggered()
 
 void MainWindow::on_Background_triggered()
 {
+    QPalette pal(palette());
+    QColor Color = QColorDialog::getColor(Qt::white, this, "Choose color");
+    if (Color.isValid())
+    {
+    pal.setColor(QPalette::Base, Color);
+    ui->TextEdit->setPalette(pal);
+    }
 
 }
